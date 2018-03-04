@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:show]
 
   # GET /orders
   # GET /orders.json
@@ -24,11 +25,15 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    @user = User.find_or_create user_params_for_order
+
+    ticket_id = params[:ticket_id]
+
+    @order = Order.new(ticket_id: ticket_id, user: @user)
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to @order, notice: 'Pedido realizado com sucesso' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -67,8 +72,15 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
     end
 
+    def check_user
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:status, :ticket_id, :user_id)
+    end
+
+    def user_params_for_order
+      params.require(:user).permit(:name, :email, :phone)
     end
 end
