@@ -15,8 +15,10 @@
 
   </head>
 
-  <body class="container">
+  <body>
     <%= render "layouts/header"%>
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
   </body>
 </html>
