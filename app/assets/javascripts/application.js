@@ -27,13 +27,14 @@ function getTickets(){
   if (response_finally_parsed_at_all == false){
     value = "Não foi encontrado pedido para este email."
   } else {
+    value = "<table class='table'><thead><tr><td>Evento</td><td>Data</td><td>Valor</td></tr></thead><tbody>"
     $.each(response_finally_parsed_at_all, function(i,item){
         name = item.name
         price = item.price
         date = item.date
-        value = "<table class='table'><thead><tr><td>Evento</td><td>Data</td><td>Valor</td></tr></thead><tbody>"
-        value += "<tr><td>" + name + "</td><td>" + date + "</td><td>" + price + "</td></tr></tbody></table>"
+        value += "<tr><td>" + name + "</td><td>" + date + "</td><td>" + price + "</td></tr>"
     })
+    value += "</tbody></table>"
   }
 
   $('#responseTable').html("").append(value);

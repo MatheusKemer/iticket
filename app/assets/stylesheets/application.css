@@ -139,3 +139,7 @@ p {
   background-color: #99c432 !important;
   border-color: #99c432 !important;
 }
+
+thead{
+  font-weight: bold;
+}
