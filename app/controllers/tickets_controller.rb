@@ -31,6 +31,7 @@ class TicketsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Evento criado com sucesso.' }
         format.json { render :show, status: :created, location: @ticket }
       else
+        flash[:error] = "Os seguinte erros foram encontrados:" + @ticket.errors.full_messages.to_sentence
         format.html { render :new }
         format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
