@@ -18,3 +18,16 @@
 function enableBuyOptions(){
   $(".buy-option").show();
 }
+
+function getTickets(){
+  var email = $("#email").val()
+  callAjax(email)
+}
+
+function callAjax(email){
+  $.ajax({
+    type: "get",
+    url: "get-orders",
+    data: { "email": email }
+  });
+}

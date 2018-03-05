@@ -1,24 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <p>
+    <strong>Nome:</strong>
+    <%= @ticket.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ticket.name %>
-</p>
+  <p>
+    <strong>Valor:</strong>
+    <%= @ticket.price %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @ticket.price %>
-</p>
+  <p>
+    <strong>Dia do evento:</strong>
+    <%= @ticket.date.strftime("%d/%m/%Y - %H:%M") %>
+  </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @ticket.date %>
-</p>
+  <p>
+    <strong>Taxa:</strong>
+    <%= @ticket.taxe %>
+  </p>
 
-<p>
-  <strong>Taxe:</strong>
-  <%= @ticket.taxe %>
-</p>
+  <%= button_to "Quero ir", {}, {onclick: "enableBuyOptions()", remote: true, class: 'btn btn-success buy-ticket'}  %>
+</div>
+<br />
+<div class="buy-option">
+  Preencha o cadastro abaixo:
+  <%= render "users/form", user: User.new, ticket_id: @ticket.id %>
+  <br />
+</div>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+<%= link_to "Back", root_path %>

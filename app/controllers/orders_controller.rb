@@ -8,6 +8,12 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def getOrders
+    email = params[:email]
+    orders = User.find_by(email: email).orders
+    orders.map{|o| o.ticket}.to_json
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show

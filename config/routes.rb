@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :tickets
 
   root "home#index"
+
+  get "get-orders", to: "orders#getOrders"
 end
