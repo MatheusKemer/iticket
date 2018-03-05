@@ -83,6 +83,10 @@ p {
   margin-top: 55px;
 }
 
-.row.events .empty .btn, .new-event{
+.nav-itens .btn, .new-event{
   margin-top: 35px;
+}
+
+.field_with_errors{
+  display: block;
 }
