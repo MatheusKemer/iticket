@@ -3,10 +3,12 @@
     <% tickets.each do |ticket| %>
       <%= link_to ticket_path(ticket) do%>
         <div class="col-sm-4 one-ticket">
-          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-          <p><%= ticket.name %></p>
-          <p><%= ticket.date.strftime("%d/%m/%Y") %></p>
-          <p>R$ <%= ticket.price + ticket.taxe %></p>
+          <img src="Evento<%=(1..4).to_a.sample%>.png" class="img-responsive" style="width:100%" alt="Image">
+          <strong>
+            <p><%= ticket.name %></p>
+            <p><%= ticket.date.strftime("%d/%m/%Y") %></p>
+            <p>R$ <%= ticket.price + ticket.taxe %></p>
+          </strong>
         </div>
       <% end %>
     <% end %>
