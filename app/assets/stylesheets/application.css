@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar{
+  height: 240px !important;
+  text-align: center;
+  padding: 90px;
+  margin-bottom: 0px !important;
+}
+
+.navbar-inverse{
+  background-image: url('/barra.png');
+}
+
+p {
+  font-family: "Lucida Console", Monaco, monospace !important;
+}
+
+.menu p{
+  font-family: "Verdana", Geneva, sans-serif !important;
+}
+
+.menu .title{
+  font-size: 90px;
+  padding-bottom: 35px;
+}
+
+.menu .subtitle{
+  font-size: 30px;
+  color: #f6b246;
+  text-transform: uppercase;
+}
+
+.nav-items{
+  font-size: 18px;
+}
+
+.nav-items a:hover, a.active{
+  color: #f6b246;
+  background-color: white;
+  text-decoration: none;
+}
+
+.nav-item-left{
+  margin-right: 10%;
+}
+
+.nav-item-right{
+  margin-left: 10%;
+}
+
+.container{
+  padding-top: 50px;
+}
+
+.user-email{
+  padding-top: 40px;
+  font-size: 16px;
+}

@@ -18,6 +18,13 @@
   <body>
     <%= render "layouts/header"%>
     <div class="container">
+      <div class="nav-items text-center">
+        <%= link_to "Eventos", root_path,
+          class: "nav-item-left #{'active' if params["controller"] == 'home'}" %>
+        |
+        <%= link_to "Pedidos", orders_path,
+          class: "nav-item-right #{'active' if params["controller"] == 'orders'}" %>
+      </div>
       <%= yield %>
     </div>
   </body>
