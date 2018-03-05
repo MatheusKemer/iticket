@@ -21,13 +21,18 @@ function enableBuyOptions(){
 
 function getTickets(){
   var email = $("#email").val()
-  callAjax(email)
+  response = callAjax(email)
+
 }
 
 function callAjax(email){
-  $.ajax({
+  return $.ajax({
     type: "get",
     url: "get-orders",
-    data: { "email": email }
+    data: { "email": email },
+    success: function(data) {
+      $('#divTeste').html(data);
+      return data.file_content;
+    }
   });
 }

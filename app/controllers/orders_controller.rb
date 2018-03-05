@@ -10,8 +10,9 @@ class OrdersController < ApplicationController
 
   def getOrders
     email = params[:email]
-    orders = User.find_by(email: email).orders
-    orders.map{|o| o.ticket}.to_json
+    orders = User.find_by(email: email).try(:orders)
+    tickets = orders.nil? ? "false" : orders.map{|o| o.ticket}.to_json
+    render :json => { :product => tickets.to_json }
   end
 
   # GET /orders/1
