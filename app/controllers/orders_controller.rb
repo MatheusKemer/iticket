@@ -43,7 +43,8 @@ class OrdersController < ApplicationController
         format.html { redirect_to @order, notice: 'Pedido realizado com sucesso' }
         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new }
+        flash[:error] = "Não foi possível criar ou verificar o usuário, tente novamente."
+        format.html { redirect_to root_path }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
