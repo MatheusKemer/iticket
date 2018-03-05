@@ -122,3 +122,20 @@ p {
 .buy-option{
   margin-top: 25px;
 }
+
+@media screen and (min-width: 768px){
+  .btn.buy-ticket{
+    margin-top: 74px;
+    float: right !important
+  }
+}
+
+.btn-primary {
+  background-color: #604098 !important;
+  border-color: #604098 !important;
+}
+
+.btn-success {
+  background-color: #99c432 !important;
+  border-color: #99c432 !important;
+}

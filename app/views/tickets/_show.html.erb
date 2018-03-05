@@ -25,7 +25,8 @@
           <%= @ticket.taxe %>
         </p>
 
-        <%= button_to "Quero ir", {}, {data: { target: "#buy-option#{@ticket.id}", toggle: :collapse }, remote: true, class: 'btn btn-success buy-ticket'}  %>
+        <%= button_to "Quero ir", {}, {data: { target: "#buy-option#{@ticket.id}", toggle: :collapse },
+                                      remote: true, class: 'btn btn-success buy-ticket'}  %>
       </div>
       <br />
     </div>
