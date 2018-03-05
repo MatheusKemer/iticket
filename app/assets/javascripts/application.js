@@ -36,3 +36,7 @@ function callAjax(email){
     }
   });
 }
+
+setTimeout(function() {
+    $('.alert').fadeOut('fast');
+}, 10000); 
