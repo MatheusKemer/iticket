@@ -44,6 +44,12 @@ p {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 741px){
+  .subtitle{
+    line-height: 30px;
+  }
+}
+
 .nav-items{
   font-size: 18px;
 }
