@@ -18,16 +18,17 @@
 function getTickets(){
   var email = $("#email").val()
   response = callAjax(email)
-
+  $("#responseDiv").html(response.responseText)
 }
 
 function callAjax(email){
   return $.ajax({
     type: "get",
     url: "get-orders",
+    async: false,
     data: { "email": email },
     success: function(data) {
-      $('#divTeste').html(data);
+      console.log("Requested completed")
       return data.file_content;
     }
   });
