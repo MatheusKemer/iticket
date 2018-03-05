@@ -70,3 +70,11 @@ p {
   padding-top: 40px;
   font-size: 16px;
 }
+
+.modal .event-info{
+  text-align: left;
+}
+
+.modal .title{
+  font-size: 20px;
+}

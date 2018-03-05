@@ -1,31 +1,39 @@
-<div>
-  <p>
-    <strong>Nome:</strong>
-    <%= @ticket.name %>
-  </p>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-4 sidenav">
+      <img src="Evento<%=(1..4).to_a.sample%>.png" class="img-responsive" style="width:100%" alt="Image">
+    </div>
 
-  <p>
-    <strong>Valor:</strong>
-    <%= @ticket.price %>
-  </p>
+    <div class="col-md-8">
+      <div class="event-info">
+        <p class="title">
+          <%= @ticket.name %>
+        </p>
 
-  <p>
-    <strong>Dia do evento:</strong>
-    <%= @ticket.date.strftime("%d/%m/%Y - %H:%M") %>
-  </p>
+        <p>
+          <strong>Valor:</strong>
+          <%= @ticket.price %>
+        </p>
 
-  <p>
-    <strong>Taxa:</strong>
-    <%= @ticket.taxe %>
-  </p>
+        <p>
+          <strong>Dia do evento:</strong>
+          <%= @ticket.date.strftime("%d/%m/%Y - %H:%M") %>
+        </p>
 
-  <%= button_to "Quero ir", {}, {onclick: "enableBuyOptions()", remote: true, class: 'btn btn-success buy-ticket'}  %>
+        <p>
+          <strong>Taxa:</strong>
+          <%= @ticket.taxe %>
+        </p>
+
+        <%= button_to "Quero ir", {}, {onclick: "enableBuyOptions()", remote: true, class: 'btn btn-success buy-ticket'}  %>
+      </div>
+      <br />
+
+      <div class="buy-option">
+        Preencha o cadastro abaixo:
+        <%= render "users/form", user: User.new, ticket_id: @ticket.id %>
+        <br />
+      </div>
+    </div>
+  </div>
 </div>
-<br />
-<div class="buy-option">
-  Preencha o cadastro abaixo:
-  <%= render "users/form", user: User.new, ticket_id: @ticket.id %>
-  <br />
-</div>
-
-<%= link_to "Back", root_path %>
