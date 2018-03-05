@@ -29,7 +29,7 @@ p {
   font-family: "Lucida Console", Monaco, monospace !important;
 }
 
-.menu p{
+.menu p, h1{
   font-family: "Verdana", Geneva, sans-serif !important;
 }
 
@@ -83,6 +83,6 @@ p {
   margin-top: 55px;
 }
 
-.row.events .empty .btn{
-  margin-top: 45px;
+.row.events .empty .btn, .new-event{
+  margin-top: 35px;
 }

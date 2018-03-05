@@ -1,5 +1,7 @@
-<h1>Novo ingresso</h1>
+<div class="new-event">
+  <h1 class="text-center">Novo evento</h1>
 
-<%= render 'form', ticket: @ticket %>
+  <%= render 'form', ticket: @ticket %>
+</div>
 
-<%= link_to 'Back', tickets_path %>
+<%= button_to 'Voltar', root_path, method: :get, class: "btn btn-danger" %>
