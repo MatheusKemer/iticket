@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Pedido realizado com sucesso' }
+        format.html { redirect_to root_path, notice: 'Pedido realizado com sucesso, foi enviado um e-mail com o boleto.' }
         format.json { render :show, status: :created, location: @order }
       else
         flash[:error] = "Não foi possível criar ou verificar o usuário, tente novamente."
