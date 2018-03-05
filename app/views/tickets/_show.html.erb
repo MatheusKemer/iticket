@@ -25,15 +25,16 @@
           <%= @ticket.taxe %>
         </p>
 
-        <%= button_to "Quero ir", {}, {onclick: "enableBuyOptions()", remote: true, class: 'btn btn-success buy-ticket'}  %>
+        <%= button_to "Quero ir", {}, {data: { target: "#buy-option#{@ticket.id}", toggle: :collapse }, remote: true, class: 'btn btn-success buy-ticket'}  %>
       </div>
       <br />
-
-      <div class="buy-option">
-        Preencha o cadastro abaixo:
-        <%= render "users/form", user: User.new, ticket_id: @ticket.id %>
-        <br />
-      </div>
+    </div>
+  </div>
+  <div class="row content">
+    <div class="buy-option" id="buy-option<%=@ticket.id%>">
+      <p>Preencha o cadastro abaixo: </p>
+      <%= render "users/form", user: User.new, ticket_id: @ticket.id %>
+      <br />
     </div>
   </div>
 </div>

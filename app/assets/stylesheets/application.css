@@ -79,6 +79,28 @@ p {
   font-size: 20px;
 }
 
+.modal-form {
+    padding-left: 160px;
+}
+
+@media screen and (max-width: 768px){
+  .modal-form {
+      padding-left: 0;
+  }
+
+  .event-info .title{
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .img-responsive{
+    width: 50% !important;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .row.events .empty, .events{
   margin-top: 55px;
 }
@@ -89,4 +111,8 @@ p {
 
 .field_with_errors{
   display: block;
+}
+
+.buy-option{
+  margin-top: 25px;
 }

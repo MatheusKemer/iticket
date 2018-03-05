@@ -15,10 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-function enableBuyOptions(){
-  $(".buy-option").show();
-}
-
 function getTickets(){
   var email = $("#email").val()
   response = callAjax(email)
@@ -39,4 +35,4 @@ function callAjax(email){
 
 setTimeout(function() {
     $('.alert').fadeOut('fast');
-}, 10000); 
+}, 10000);

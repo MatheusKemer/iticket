@@ -3,7 +3,7 @@
     <% if tickets && tickets.any? %>
         <% tickets.each do |ticket| %>
           <%#= link_to ticket_path(ticket) do%>
-          <a href="#buyTicketModal" data-toggle="modal" data-target="#buyTicketModal">
+          <a href="#buyTicketModal<%=ticket.id%>" data-toggle="modal" data-target="#buyTicketModal<%=ticket.id%>">
             <div class="col-sm-4 one-ticket">
               <img src="Evento<%=(1..4).to_a.sample%>.png" class="img-responsive" style="width:100%" alt="Image">
               <strong>
@@ -15,7 +15,7 @@
           </a>
           <%# end %>
           <% @ticket = ticket%>
-          <div id="buyTicketModal" class="modal fade" role="dialog">
+          <div id="buyTicketModal<%=ticket.id%>" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">

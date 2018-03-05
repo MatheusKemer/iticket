@@ -1,34 +1,24 @@
-<%= form_for :user, :url => orders_path, :method => "post" do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="text-center modal-form">
+  <%= form_for :user, :url => orders_path, :method => "post" do |f| %>
+    <%= hidden_field_tag "ticket_id", ticket_id if ticket_id.present? %>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="form-group row col-sm-8">
+      <%= f.label :name, "Nome", class: "col-sm-12 col-form-label" %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group row col-sm-8">
+      <%= f.label :email, class: "col-sm-12 col-form-label" %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="form-group row col-sm-8">
+      <%= f.label :phone, "Telefone", class: "col-sm-12 col-form-label" %>
+      <%= f.text_field :phone, class: 'form-control' %>
+    </div>
+
+    <div class="form-group row col-sm-6">
+      <%= f.submit "Comprar", class:"btn btn-primary" %>
     </div>
   <% end %>
-
-  <%= hidden_field_tag "ticket_id", ticket_id if ticket_id.present? %>
-
-  <div class="field">
-    <%= f.label :name, "Nome" %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone, "Telefone" %>
-    <%= f.text_field :phone %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Comprar" %>
-  </div>
-<% end %>
+</div>
