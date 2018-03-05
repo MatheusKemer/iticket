@@ -79,7 +79,7 @@ p {
   font-size: 20px;
 }
 
-.row.events .empty{
+.row.events .empty, .events{
   margin-top: 55px;
 }
 
