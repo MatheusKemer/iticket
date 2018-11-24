@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  get "get-orders", to: "orders#getOrders"
+  get "get-orders", to: "orders#get_orders"
 end

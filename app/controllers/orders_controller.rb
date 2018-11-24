@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def getOrders
+  def get_orders
     email = params[:email]
     orders = User.find_by(email: email).try(:orders)
     tickets = orders.nil? ? "false" : orders.map{|o| o.ticket}.to_json

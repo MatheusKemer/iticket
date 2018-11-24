@@ -1,7 +1,6 @@
-<div class="new-event">
+<div class="row new-event">
   <h1 class="text-center">Novo evento</h1>
-
-  <%= render 'form', ticket: @ticket %>
+  <div class="col-sm-8 col-sm-offset-2">
+  	<%= render 'form', ticket: @ticket %>
+	</div>
 </div>
-
-<%= button_to 'Voltar', root_path, method: :get, class: "btn btn-danger" %>
