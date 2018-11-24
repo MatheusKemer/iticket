@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: iticket_production
-  username: iticket
+  database: <%= ENV['ITICKET_DATABASE_NAME'] %>
+  username: <%= ENV['ITICKET_DATABASE_USERNAME'] %>
   password: <%= ENV['ITICKET_DATABASE_PASSWORD'] %>
+  host: <%= ENV['ITICKET_DATABASE_HOST'] %>
